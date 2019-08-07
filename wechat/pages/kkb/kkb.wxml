@@ -1,0 +1,14 @@
+<!--pages/kkb/kkb.wxml-->
+<view>
+  <text>pages/kkb/kkb.wxml</text>
+
+  <map id="map" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height: 300px;"></map>
+
+  <editor id="editor" class="ql-container" placeholder="{{placeholder}}" showImgSize showImgToolbar showImgResize bindstatuschange="onStatusChange" read-only="{{readOnly}}" bindready="onEditorReady">
+  </editor>
+
+  <camera device-position="front" flash="off" binderror="error" style="width: 100%; height: 300px;"></camera>
+
+  <button bindtap='photo'>拍照</button>
+  <image src='{{src}}'></image>
+</view>

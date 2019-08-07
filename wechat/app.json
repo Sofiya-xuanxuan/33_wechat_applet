@@ -1,0 +1,30 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/kkb/kkb",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "sofiya",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/kkb/kkb",
+        "iconPath": "assets/home.png",
+        "selectedIconPath": "assets/home_choice.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/index/index",
+        "iconPath": "assets/me.png",
+        "selectedIconPath": "assets/me_choice.png"
+      }
+    ]
+  }
+}
