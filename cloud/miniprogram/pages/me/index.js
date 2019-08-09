@@ -5,16 +5,17 @@ const collection = db.collection('kkb')
 Page({
   data: {
     books: [],
-    page: 0,
+    page: 1,
     imgUrl: ''
   },
   onLoad() {
     this.getList(true) //首次加载
   },
   getList(isInit) {
+    var _this = this
     wx.showLoading()
     let SIZE = 2
-    collection.limit(SIZE).get({
+    collection.skip(this.data.page * SIZE).limit(SIZE).get({
       success: res => {
         if (isInit) {
           this.setData({
@@ -26,7 +27,6 @@ Page({
           })
         }
         wx.hideLoading()
-
       }
     })
   },
@@ -77,21 +77,21 @@ Page({
     var _this = this
     wx.chooseImage({
       count: 1,
-      success: function (res) {
+      success: function(res) {
         let filePath = res.tempFilePaths[0]
         let cloudPath = 'kkb-quanzhan-10-' + (new Date().getTime())
         console.log(filePath)
         wx.cloud.uploadFile({
           filePath,
-          cloudPath
-        }).then(res => {
-          console.log(res)
-          console.log(res.fileID)
-          console.log(9999)
-          _this.setData({
-            imgurl: res.fileID
-          })
-          console.log(_this.data.imgurl)
+          cloudPath,
+          success: res => {
+            console.log(res)
+            console.log(res.fileID)
+            _this.setData({
+              imgurl: res.fileID
+            })
+            console.log(_this.data.imgurl)
+          }
         })
       },
     })

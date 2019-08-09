@@ -1,13 +1,13 @@
 <view>
-  <!-- <view wx:for="{{books}}">
+  <view wx:for="{{books}}">
     <view>{{item.title}}</view>
     <image src='{{item.image}}'></image>
     <view>{{item.summary}}</view>
-  </view> -->
+  </view>
   <view>
     <button type='primary' bindtap='callLogin'>调用云函数</button>
   </view>
   <view>
-    <image src='{{imgUrl}}'></image>
+    <image src="{{imgUrl}}"></image>
   </view>
 </view>
